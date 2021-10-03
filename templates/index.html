@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>uniswap v3 套利空间</title>
+</head>
+<body>
+
+<form method="POST">
+    <label>搜索区块：</label><input type="text" name="number" placeholder="请输入搜索区块">
+    <input type="submit" value="提交">
+</form>
+<p>当前区块：{{i}}</p>
+    <table>
+      <tr>
+        <th>套利路径</th>
+        <th>套利结果</th>
+        <th>需要成本</th>
+      </tr>
+      {% for final in finals %}
+      <tr>
+        <td>{{final['path']}}</td>
+        <td>{{final['arbitrage']}}</td>
+        <td>{{final['cost']}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+</body>
+</html>
